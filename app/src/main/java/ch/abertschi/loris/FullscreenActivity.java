@@ -32,7 +32,6 @@ public class FullscreenActivity extends AppCompatActivity {
 
     private View mContentView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +40,11 @@ public class FullscreenActivity extends AppCompatActivity {
 
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(TabHostDetails.newInstance());
-        fragments.add(TabAttackConfirm.newInstance());
         fragments.add(TabAttack.newInstance());
 
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments);
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(adapter);
-
 
         mContentView = findViewById(R.id.fullscreen_content);
 //        mContentView.setOnTouchListener(new View.OnTouchListener() {
@@ -81,7 +78,6 @@ public class FullscreenActivity extends AppCompatActivity {
 //        });
         fullScreen();
 
-
         View enterLayout = findViewById(R.id.enter);
 //        Animation animation = new TranslateAnimation(0, 4000 ,0, 0); //May need to check the direction you want.
 //        animation.setDuration(1000);
@@ -91,7 +87,6 @@ public class FullscreenActivity extends AppCompatActivity {
 
 //        enterLayout.startAnimation(animation);
 //        enterLayout.setVisibility(View.GONE);
-
 
     }
 
@@ -110,7 +105,6 @@ public class FullscreenActivity extends AppCompatActivity {
         fullScreen();
     }
 
-
     private static void request(String ip, int port) {
         Socket socket = null;
         try {
@@ -126,7 +120,6 @@ public class FullscreenActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 
     public static void main(String[] args) {
 

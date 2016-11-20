@@ -38,10 +38,10 @@ public class TabAttack extends Fragment {
         final ImageView img = (ImageView) getActivity().findViewById(R.id.face);
         img.setImageResource(R.mipmap.suspicious);
 
-        Animation pulse = AnimationUtils.loadAnimation(getActivity(), R.anim.pulse_infinite);
-        img.startAnimation(pulse);
+        //Animation pulse = AnimationUtils.loadAnimation(getActivity(), R.anim.pulse_infinite);
+        //img.startAnimation(pulse);
 
-         mHandler = new Handler(Looper.getMainLooper()) {
+        mHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message inputMessage) {
 
@@ -64,8 +64,6 @@ public class TabAttack extends Fragment {
                 }
             }
         };
-
-
     }
 
     @Override
@@ -75,13 +73,11 @@ public class TabAttack extends Fragment {
             if (thread == null) {
                 thread = new Thread(new ConnectivityRunnable(mHandler, "192.168.0.248", 80));
                 thread.start();
+
             }
-
             final ImageView img = (ImageView) getActivity().findViewById(R.id.face);
-
             Animation pulse = AnimationUtils.loadAnimation(getActivity(), R.anim.pulse_infinite);
             img.startAnimation(pulse);
-
         }
     }
 }

@@ -31,11 +31,8 @@ public class ConnectivityRunnable implements Runnable {
 
     public static final int TIME_OUT = 1;
     public static final int EXCEPTION = -1;
-
     public static final int SUCCESS = 0;
-
     public static final int UNKNOWN = 2;
-
 
     private Handler handler;
     private String ip;
@@ -54,7 +51,7 @@ public class ConnectivityRunnable implements Runnable {
 
             URL url = null;
             try {
-                if (! ip.startsWith("http:") && ! ip.startsWith("https:")) {
+                if (!ip.startsWith("http:") && !ip.startsWith("https:")) {
                     ip = "http://" + ip;
                 }
                 System.out.println(ip);
@@ -82,10 +79,6 @@ public class ConnectivityRunnable implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-
-
         }
-
     }
 }

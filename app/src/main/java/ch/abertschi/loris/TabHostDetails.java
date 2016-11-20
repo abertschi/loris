@@ -30,12 +30,7 @@ public class TabHostDetails extends Fragment {
             if (getActivity() != null) {
                 ImageView img = (ImageView) getActivity().findViewById(R.id.face);
                 if (img != null) {
-                    img.setImageResource(R.mipmap.nerd);
-                    Animation pulse = AnimationUtils.loadAnimation(getActivity(), R.anim.pulse);
-                    if (pulse.hasEnded() | !pulse.hasStarted()) {
-                        img.startAnimation(pulse);
-                    }
-
+                    img.setImageResource(R.mipmap.suspicious);
                 }
             }
         }
