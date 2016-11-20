@@ -61,7 +61,7 @@ public class ConnectivityRunnable implements Runnable {
                 HttpURLConnection.setFollowRedirects(false);
                 HttpURLConnection con = (HttpURLConnection) new URL(ip + ":" + port).openConnection();
                 con.setRequestMethod("GET");
-                con.setConnectTimeout(1000); //set timeout to 5 seconds
+                con.setConnectTimeout(1000);
 
                 if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
                     m.what = SUCCESS;
