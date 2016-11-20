@@ -1,0 +1,212 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fullscreen_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    android:orientation="vertical"
+    android:paddingBottom="50dp"
+    tools:context="ch.abertschi.loris.FullscreenActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4">
+
+        <ImageView
+            android:id="@+id/face"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".5"
+            android:src="@mipmap/nerd" />
+    </FrameLayout>
+
+
+    <!--<android.support.design.widget.TabLayout-->
+    <!--android:id="@+id/tabs"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:fadeScrollbars="true"-->
+    <!--app:tabIndicatorColor="@android:color/white"-->
+    <!--android:layout_weight="0.7"-->
+    <!--app:tabMode="scrollable"-->
+    <!--app:tabPaddingEnd="20dp"-->
+    <!--app:tabPaddingStart="20dp" />-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:background="@android:color/holo_red_dark"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:layout_marginBottom="0dp">-->
+
+
+            <!--<FrameLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="50dp"-->
+
+                <!--android:layout_gravity="right|center_vertical"-->
+                <!--android:background="#F95428">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical|center_horizontal"-->
+                    <!--android:paddingLeft="20dp"-->
+                    <!--android:paddingRight="30dp"-->
+                    <!--android:text="back"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="18dp" />-->
+
+            <!--</FrameLayout>-->
+
+            <!--<FrameLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="50dp"-->
+
+                <!--android:layout_gravity="left|center_vertical"-->
+                <!--android:background="#F95428">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical|center_horizontal"-->
+                    <!--android:paddingLeft="20dp"-->
+                    <!--android:paddingRight="30dp"-->
+                    <!--android:text="back"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="18dp" />-->
+
+            <!--</FrameLayout>-->
+
+
+        <!--</FrameLayout>-->
+
+    <!--</FrameLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginLeft="40dp"-->
+    <!--android:id="@+id/submit"-->
+
+    <!--android:layout_marginRight="40dp"-->
+    <!--android:layout_weight="0.6"-->
+    <!--android:orientation="vertical">-->
+
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#F95428">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingBottom="8dp"-->
+    <!--android:paddingLeft="20dp"-->
+    <!--android:paddingRight="30dp"-->
+    <!--android:paddingTop="5dp"-->
+
+    <!--android:text="Penetration test"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="18dp" />-->
+
+    <!--</FrameLayout>-->
+
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_gravity="center"-->
+
+    <!--&gt;-->
+
+    <!--<Button-->
+    <!--android:layout_width="198dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_gravity="right|center_vertical"-->
+    <!--android:backgroundTint="#F95428"-->
+    <!--android:text="go for it"-->
+    <!--android:textColor="@android:color/black"-->
+    <!--android:textSize="18dp"-->
+    <!--android:textStyle="normal" />-->
+
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_gravity="left|center_vertical"-->
+    <!--android:backgroundTint="#F95428"-->
+    <!--android:text="back"-->
+    <!--android:textColor="@android:color/black"-->
+    <!--android:textSize="18dp"-->
+    <!--android:textStyle="normal" />-->
+
+
+    <!--</FrameLayout>-->
+
+    <!--</LinearLayout>-->
+
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <!--<TextView-->
+    <!--android:id="@+id/fullscreen_content"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:gravity="center"-->
+    <!--android:keepScreenOn="true"-->
+    <!--android:text="@string/dummy_content"-->
+    <!--android:textColor="#33b5e5"-->
+    <!--android:textSize="50sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:fitsSystemWindows="true">-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/fullscreen_content_controls"-->
+    <!--style="?metaButtonBarStyle"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|center_horizontal"-->
+    <!--android:background="@color/black_overlay"-->
+    <!--android:orientation="horizontal"-->
+    <!--tools:ignore="UselessParent">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/dummy_button"-->
+    <!--style="?metaButtonBarButtonStyle"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/dummy_button" />-->
+
+    <!--</LinearLayout>-->
+    <!--</FrameLayout>-->
+
+</LinearLayout>
