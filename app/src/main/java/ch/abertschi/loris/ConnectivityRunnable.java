@@ -64,12 +64,14 @@ public class ConnectivityRunnable implements Runnable {
                     m.what = SUCCESS;
                 } else {
                     m.what = UNKNOWN;
+                    m.obj = con.getResponseMessage();
                 }
             } catch (java.net.SocketTimeoutException e) {
                 m.what = TIME_OUT;
 
             } catch (java.io.IOException e) {
                 m.what = EXCEPTION;
+                m.obj = e.getClass().getSimpleName();
                 e.printStackTrace();
             }
 

@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
@@ -32,19 +33,44 @@ public class FullscreenActivity extends AppCompatActivity {
 
     private View mContentView;
 
+    private CustomViewPager mViewPager;
+
+    private static FullscreenActivity instance;
+
+    public static FullscreenActivity getInstance() {
+        return instance;
+    }
+
+    private void animateInitialLoad() {
+        Animation viewPageAnimation = new TranslateAnimation(0, 0, 2000, 0);
+        viewPageAnimation.setDuration(500);
+        viewPageAnimation.setFillAfter(true);
+        findViewById(R.id.container_content).setAnimation(viewPageAnimation);
+        viewPageAnimation.start();
+
+        ScaleAnimation fadeIn =  new ScaleAnimation(.7f, 1f, .7f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        fadeIn.setDuration(500);
+        fadeIn.setFillAfter(true);
+        findViewById(R.id.face).startAnimation(fadeIn);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instance = this;
 
         setContentView(R.layout.activity_fullscreen);
 
+        TabHostDetails tabHostDetails = new TabHostDetails();
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(TabHostDetails.newInstance());
+        fragments.add(tabHostDetails);
         fragments.add(TabAttack.newInstance());
 
         FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments);
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(adapter);
+        mViewPager = (CustomViewPager) findViewById(R.id.viewpager);
+        mViewPager.setAdapter(adapter);
+        mViewPager.setPagingEnabled(false);
 
         mContentView = findViewById(R.id.fullscreen_content);
 //        mContentView.setOnTouchListener(new View.OnTouchListener() {
@@ -77,6 +103,7 @@ public class FullscreenActivity extends AppCompatActivity {
 //            }
 //        });
         fullScreen();
+        animateInitialLoad();
 
         View enterLayout = findViewById(R.id.enter);
 //        Animation animation = new TranslateAnimation(0, 4000 ,0, 0); //May need to check the direction you want.
@@ -124,4 +151,9 @@ public class FullscreenActivity extends AppCompatActivity {
     public static void main(String[] args) {
 
     }
+
+    public CustomViewPager getViewPager() {
+        return mViewPager;
+    }
+
 };

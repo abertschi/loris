@@ -1,61 +1,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fullscreen_content"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#0099cc"
-    android:orientation="vertical"
-    tools:context="ch.abertschi.loris.FullscreenActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:card_view="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/fullscreen_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#0099cc"
+              android:orientation="vertical"
+              tools:context="ch.abertschi.loris.FullscreenActivity">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.4">
 
         <ImageView
             android:id="@+id/face"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight=".3"
-            android:src="@mipmap/suspicious" />
-    </FrameLayout>
-    
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_weight="0.6"
-       android:orientation="vertical"
-       android:layout_height="wrap_content">
+            android:src="@mipmap/suspicious"/>
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:src="@mipmap/zz2"
-           android:scaleType="centerCrop"
-           android:layout_height="wrap_content" />
+    </RelativeLayout>
 
-       <FrameLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/container_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/zz2"/>
 
-           <android.support.v4.view.ViewPager
-               android:paddingTop="10dp"
-               android:id="@+id/viewpager"
-               android:background="#F9B325"
-               android:layout_width="match_parent"
-               android:layout_gravity="center_vertical"
-               android:layout_height="wrap_content"
-               app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-       </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
+            <ch.abertschi.loris.CustomViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="#F9B325"
+                android:paddingTop="10dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-   </LinearLayout>
+        </FrameLayout>
 
 
+    </LinearLayout>
 
 
 </LinearLayout>
